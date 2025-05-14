@@ -13,17 +13,15 @@ const handleFilterChange = (filter: string) => {
 };
 </script>
 <template>
-  <div class="flex flex-col h-screen overflow-hidden">
+  <div class="flex flex-col">
     <header class="w-full sticky top-0">
       <div class="container mx-auto px-4">
         <InputSearch />
       </div>
     </header>
-    <main class="flex-1 overflow-y-auto pb-20">
-      <div class="container mx-auto px-4">
+      <div>
         <RouterView />
       </div>
-    </main>
     <footer class="fixed bottom-0 w-full bg-white z-10 py-4 shadow-lg">
       <div class="container mx-auto px-4">
         <BtnFooter @change-filter="handleFilterChange" />

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import IconPikachu from '../components/icons/IconPikachu.vue'
 import { useRouter } from 'vue-router'
-import { getPokemons } from '../services/getPokemonServices'
+import { getPokemons } from '../services/getPokemonsServices'
 import { watchEffect } from 'vue'
 import { usePokemonStore } from '../store/usePokemonStore'
 

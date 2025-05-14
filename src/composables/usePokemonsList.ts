@@ -1,5 +1,5 @@
 import { type Ref } from 'vue'
-import { getPokemons } from '../../../services/getPokemonServices'
+import { getPokemons } from '../services/getPokemonsServices'
 import { keepPreviousData, useQuery } from '@tanstack/vue-query'
 
 export const usePokemonsList = (page: Ref<number>) => {

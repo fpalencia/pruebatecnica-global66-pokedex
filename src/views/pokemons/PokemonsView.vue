@@ -1,21 +1,28 @@
 <script setup lang="ts">
-import { onMounted } from 'vue'
+import { onMounted, ref } from 'vue'
 import PokemonList from '../../components/pokemon/PokemonList.vue'
-import { usePokemons } from './composable/usePokemons'
+import { usePokemons } from '../../composables/usePokemons'
+import IconPokeball from '../../components/icons/IconPokeball.vue'
 
-const { containerProps, wrapperProps, initialLoad, pokemonsList } = usePokemons()
+const { list, initialLoad, scrollContainerRef } = usePokemons()
 
 </script>
 
 <template>
-<!--   <div v-if="initialLoad" class="flex flex-col items-center justify-center h-screen">
-    <IconPokeball class="w-24 h-24 border-4 border-white rounded-full animate-spin mb-4" />
-    <p class="text-lg text-gray-600">Cargando Pokémons...</p>
-  </div> -->
-  <div class="container mx-auto px-4 h-screen" :v-bind="containerProps">
-    <PokemonList 
-      v-bind="wrapperProps"
-     :pokemons="pokemonsList"
-     />
+  <div ref="scrollContainerRef" class="px-4 h-[calc(95vh-200px)] overflow-y-auto custom-scrollbar">
+    <!-- Loading inicial -->
+    <div v-if="initialLoad" class="h-full flex flex-col items-center justify-center">
+      <IconPokeball class="w-16 h-16 animate-spin" />
+    </div>
+    
+    <!-- Lista de Pokémons -->
+    <template v-else>
+      <PokemonList :pokemons="list.map((value) => value.data)" />
+
+      <!-- Indicador de carga al hacer scroll -->
+      <div v-if="list.length > 0" class="py-6 text-center flex flex-col items-center justify-center">
+        <IconPokeball class="w-10 h-10 animate-spin mx-auto" />
+      </div>
+    </template>
   </div>
 </template>

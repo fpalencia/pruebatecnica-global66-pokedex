@@ -1,13 +1,29 @@
 <script setup lang="ts">
-import { ref } from 'vue';
-import { useRouter } from 'vue-router';
+import { ref, onMounted, watch } from 'vue';
+import { useRouter, useRoute } from 'vue-router';
 import IconAll from '../icons/IconAll.vue';
 import IconFavorite from '../icons/IconFavorite.vue';
 
 const emit = defineEmits(['change-filter']);
 const router = useRouter();
+const route = useRoute();
 
 const activeFilter = ref('all');
+
+// Actualizar el filtro activo basado en la ruta actual
+const updateActiveFilterFromRoute = () => {
+  if (route.path.includes('/favorites')) {
+    activeFilter.value = 'favorites';
+  } else if (route.path.includes('/pokemons')) {
+    activeFilter.value = 'all';
+  }
+};
+
+// Inicializar el filtro activo basado en la ruta actual
+onMounted(updateActiveFilterFromRoute);
+
+// Actualizar cuando cambie la ruta
+watch(() => route.path, updateActiveFilterFromRoute);
 
 const changeFilter = (filter: string) => {
   activeFilter.value = filter;
