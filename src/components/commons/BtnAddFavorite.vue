@@ -6,7 +6,7 @@ type Props = {
   name: string
 }
 
-const props = defineProps<Props>()
+const { name } = defineProps<Props>()
 
 const store = usePokemonStore();
 
@@ -23,9 +23,9 @@ const toggleFavorite = (name: string) => {
 
 <template>
   <button 
-    class="w-[44px] h-[44px] rounded-full border-none cursor-pointer bg-gray-200 flex items-center justify-center"
+    class="w-[44px] h-[44px] rounded-full border-none cursor-pointer bg-gray-light flex items-center justify-center"
     @click="toggleFavorite(name)"
   >
-    <IconFavorite :color="store.isFavoriteExists(name) ? '#FFD700' : '#BFBFBF'" />
+    <IconFavorite :color="store.isFavoriteExists(name) ? '#ECA539' : '#BFBFBF'" />
   </button>
 </template>

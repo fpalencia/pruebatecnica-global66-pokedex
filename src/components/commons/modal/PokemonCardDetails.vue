@@ -52,22 +52,22 @@ const handleImageLoad = () => {
 
       <div class="p-5">
         <div class="py-2 border-b border-gray-200 flex items-center">
-          <span class="text-gray-600 font-semibold w-20">Name:</span>
+          <span class="text-gray-600 font-semibold w-20 text-gray-dark">Name:</span>
           <span class="text-gray-800">{{ pokemon?.name }}</span>
         </div>
 
         <div class="py-2 border-b border-gray-200 flex items-center">
-          <span class="text-gray-600 font-semibold w-20">Weight:</span>
+          <span class="text-gray-600 font-semibold w-20 text-gray-dark">Weight:</span>
           <span class="text-gray-800">{{ pokemon?.weight }}</span>
         </div>
 
         <div class="py-2 border-b border-gray-200 flex items-center">
-          <span class="text-gray-600 font-semibold w-20">Height:</span>
+          <span class="text-gray-600 font-semibold w-20 text-gray-dark">Height:</span>
           <span class="text-gray-800">{{ pokemon?.height }}</span>
         </div>
 
         <div class="py-2 border-b border-gray-200 flex items-center">
-          <span class="text-gray-600 font-semibold w-20">Types:</span>
+          <span class="text-gray-600 font-semibold w-20 text-gray-dark">Types:</span>
           <span class="text-gray-800">{{ pokemon?.types?.join(', ') || 'No types available' }}</span>
         </div>
       </div>

@@ -28,7 +28,7 @@ watchEffect(() => {
     </div>
   </div>
   <div class="flex flex-col items-center justify-center gap-4 p-4 text-center" v-if="isError">
-    <p class="text-2xl font-bold">Uh-oh!</p>
+    <p class="text-4xl font-bold">Uh-oh!</p>
     <span class="text-gray-600">You look lost on your journey!</span>
     <button @click="goBack" class="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors">Go back home</button>
   </div>

@@ -16,7 +16,7 @@ Este proyecto es una aplicación web tipo Pokedex desarrollada como prueba técn
 
 - **Frontend**: Vue.js, TypeScript
 - **Gestión de Estado**: Pinia
-- **Estilos**: CSS Modules / Tailwind CSS
+- **Estilos**: Tailwind CSS
 - **API**: PokeAPI (https://pokeapi.co/)
 - **HTTP Client**: Axios
 - **Validación de Datos**: Zod

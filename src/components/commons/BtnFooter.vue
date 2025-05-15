@@ -39,7 +39,7 @@ watch(() => route.path, updateActiveFilterFromRoute);
     <button 
       @click="changeFilter('all')" 
       class="flex-1 py-2 flex justify-center items-center gap-2 rounded-full cursor-pointer"
-      :class="activeFilter === 'all' ? 'bg-red-500 text-white' : 'bg-gray-300 text-white'"
+      :class="activeFilter === 'all' ? 'bg-secondary text-white' : 'bg-gray-medium text-white'"
     >
       <IconAll class="w-6 h-6" :color="activeFilter === 'all' ? 'white' : 'white'" />
       <span class="text-lg font-medium">All</span>
@@ -48,7 +48,7 @@ watch(() => route.path, updateActiveFilterFromRoute);
     <button 
       @click="changeFilter('favorites')" 
       class="flex-1 py-2 flex justify-center items-center gap-2 rounded-full cursor-pointer"
-      :class="activeFilter === 'favorites' ? 'bg-red-500 text-white' : 'bg-gray-300 text-white'"
+      :class="activeFilter === 'favorites' ? 'bg-secondary text-white' : 'bg-gray-medium text-white'"
     >
       <IconFavorite class="w-6 h-6" :color="activeFilter === 'favorites' ? 'white' : 'white'" />
       <span class="text-lg font-medium">Favorites</span>
