@@ -2,7 +2,7 @@
 
 ## 📝 Descripción del Proyecto
 
-Este proyecto es una aplicación web tipo Pokedex desarrollada como prueba técnica para Global66. La aplicación permite a los usuarios explorar información sobre diferentes Pokémon, buscar por nombre, y guardar sus Pokémon favoritos.
+Este proyecto es una aplicación web tipo Pokedex desarrollada como prueba técnica para Global66. La aplicación permite a los usuarios explorar información sobre diferentes Pokémon, buscar por nombre, visualizar detalles en un modal interactivo, y guardar sus Pokémon favoritos.
 
 ## ✨ Características Principales
 
