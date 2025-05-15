@@ -45,8 +45,8 @@ export const usePokemons = () => {
   useInfiniteScroll(scrollContainerRef, () => {
     fetchNextPage()
   }, {
-    distance: 100,
-    throttle: 300
+    distance: 10,
+    throttle: 600
   })
 
   return {

@@ -1,7 +1,7 @@
 import { ref, watchEffect } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
-export function useSearch() {
+export function usePokemonSearch() {
   const route = useRoute()
   const router = useRouter()
 

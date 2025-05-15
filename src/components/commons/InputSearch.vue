@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { useSearch } from '../../composables/useSearch'
+import { usePokemonSearch } from '../../composables/usePokemonSearch'
 
-const { searchValue, handleSearch, clearSearch } = useSearch()
+const { searchValue, handleSearch, clearSearch } = usePokemonSearch()
 </script>
 
 <template>

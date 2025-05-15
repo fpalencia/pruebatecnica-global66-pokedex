@@ -3,7 +3,7 @@ import { defineEmits, ref } from 'vue';
 import BtnAddFavorite from '../BtnAddFavorite.vue';
 import { usePokemonCardDetails } from '../../../composables/usePokemonCardDetails';
 import IconPokeball from '../../icons/IconPokeball.vue';
-
+import { capitalize } from '../../../helpers';
 type Props = {
   pokemon: string
 }
@@ -25,14 +25,14 @@ const handleImageLoad = () => {
 </script>
 
 <template>
-  <div class="fixed inset-0 bg-[#36415359] bg-opacity-70 flex items-center justify-center z-50" @click="closeModal">
+  <div class="fixed inset-0 bg-[#36415359] bg-opacity-70 flex items-center justify-center z-50 px-4 lg:px-0" @click="closeModal">
     <div class="bg-white rounded-lg shadow-lg w-full max-w-xl overflow-hidden" @click.stop>
 
       <div class="h-56 relative overflow-hidden">
         <button @click="$emit('close')"
           class="absolute top-2 right-2 z-20 h-8 w-8 rounded-full flex items-center justify-center bg-white text-gray-500 hover:bg-gray-100 shadow-md cursor-pointer">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="4">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
         <img src="../../../assets/images/background-image.webp" alt="background image" class="background-img absolute inset-0 w-full h-full object-cover" />
@@ -53,7 +53,7 @@ const handleImageLoad = () => {
       <div class="p-5">
         <div class="py-2 border-b border-gray-200 flex items-center">
           <span class="text-gray-600 font-semibold w-20 text-gray-dark">Name:</span>
-          <span class="text-gray-800">{{ pokemon?.name }}</span>
+          <span class="text-gray-800">{{ pokemon?.name ? capitalize(pokemon.name) : '' }}</span>
         </div>
 
         <div class="py-2 border-b border-gray-200 flex items-center">
@@ -68,13 +68,13 @@ const handleImageLoad = () => {
 
         <div class="py-2 border-b border-gray-200 flex items-center">
           <span class="text-gray-600 font-semibold w-20 text-gray-dark">Types:</span>
-          <span class="text-gray-800">{{ pokemon?.types?.join(', ') || 'No types available' }}</span>
+          <span class="text-gray-800">{{ pokemon?.types ? pokemon.types.map(type => capitalize(type)).join(', ') : 'No types available' }}</span>
         </div>
       </div>
 
-      <div class="p-5 flex items-center justify-between">
+      <div class="pt-0 pl-5 pr-5 pb-5 flex items-center justify-between">
         <button @click="copy()"
-          class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-6 rounded-full transition-colors cursor-pointer">
+          class="bg-secondary hover:bg-accent text-white font-bold py-2 px-6 rounded-full transition-colors cursor-pointer">
           {{ copied ? 'Copied!' : 'Share to my friends' }}
         </button>
         <BtnAddFavorite :name="pokemon?.name ?? ''" />
