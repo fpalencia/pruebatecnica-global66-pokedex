@@ -36,7 +36,7 @@ Este proyecto es una aplicación web tipo Pokedex desarrollada como prueba técn
 
 3. Inicia el servidor de desarrollo:
    ```bash
-   npm start
+   npm run dev
    ```
 
 4. Abre tu navegador en `http://localhost:5173`
