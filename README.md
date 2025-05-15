@@ -6,9 +6,10 @@ Este proyecto es una aplicación web tipo Pokedex desarrollada como prueba técn
 
 ## ✨ Características Principales
 
-- **Listado de Pokémon**: Visualización de Pokémon con paginación
+- **Listado de Pokémon**: Visualización de Pokémon con scroll infinito
 - **Búsqueda**: Filtrado de Pokémon por nombre
 - **Favoritos**: Funcionalidad para guardar y gestionar Pokémon favoritos
+- **Modal de Detalle**: Ventana modal con información detallada de cada Pokémon
 - **Diseño Responsivo**: Interfaz adaptable a diferentes dispositivos
 
 ## 🛠️ Tecnologías Utilizadas
