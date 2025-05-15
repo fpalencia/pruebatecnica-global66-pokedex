@@ -50,6 +50,7 @@ Este proyecto es una aplicación web tipo Pokedex desarrollada como prueba técn
 ├── assets/           # Recursos estáticos
 ├── components/       # Componentes reutilizables
 ├── composables/      # Composables
+├── helpers/          # Funciones auxiliares
 ├── layout/           # Componentes de estructura y layout
 ├── router/           # Configuración de enrutamiento
 ├── schema/           # Esquemas de validación y definición de datos
