@@ -11,6 +11,7 @@ const handleFilterChange = (filter: string) => {
   activeFilter.value = filter;
   console.log('Filtro cambiado a:', filter);
 };
+
 </script>
 <template>
   <div class="flex flex-col">

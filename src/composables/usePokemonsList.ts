@@ -13,13 +13,10 @@ export const usePokemonsList = (page: Ref<number>) => {
     queryKey: ['pokemons', page],
     queryFn: () => getPokemons(page.value),
     placeholderData: keepPreviousData,
-    retry: 3
+    retry: 4
   })
 
-  console.log(pokemons)
-
   return {
-    //props
     pokemons,
     isLoading,
     isError,

@@ -10,7 +10,6 @@ const route = useRoute();
 
 const activeFilter = ref('all');
 
-// Actualizar el filtro activo basado en la ruta actual
 const updateActiveFilterFromRoute = () => {
   if (route.path.includes('/favorites')) {
     activeFilter.value = 'favorites';
@@ -19,10 +18,8 @@ const updateActiveFilterFromRoute = () => {
   }
 };
 
-// Inicializar el filtro activo basado en la ruta actual
 onMounted(updateActiveFilterFromRoute);
 
-// Actualizar cuando cambie la ruta
 watch(() => route.path, updateActiveFilterFromRoute);
 
 const changeFilter = (filter: string) => {

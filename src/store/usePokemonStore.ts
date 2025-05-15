@@ -15,18 +15,18 @@ export const usePokemonStore = defineStore('pokemons', () => {
     initialLoad.value = newInitialLoad
   }
 
-  const addFavorite = (pokemon_name: string) => {
-    favorites.value = { ...favorites.value, [pokemon_name]: pokemon_name }
+  const addFavorite = (pokemonName: string) => {
+    favorites.value = { ...favorites.value, [pokemonName]: pokemonName }
   }
 
-  const removeFavorite = (pokemon_name: string) => {
+  const removeFavorite = (pokemonName: string) => {
     const newFavorites = { ...favorites.value }
-    delete newFavorites[pokemon_name]
+    delete newFavorites[pokemonName]
     favorites.value = newFavorites
   }
 
-  const isFavoriteExists = (pokemon_name: string) => {
-    return favorites.value[pokemon_name]
+  const isFavoriteExists = (pokemonName: string) => {
+    return favorites.value[pokemonName]
   }
 
   return {

@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
-import PokemonList from '../../components/pokemon/PokemonList.vue'
-import { usePokemons } from '../../composables/usePokemons'
 import IconPokeball from '../../components/icons/IconPokeball.vue'
+import PokemonList from '../../components/pokemon/PokemonList.vue'
+import { onMounted, ref } from 'vue'
+import { usePokemons } from '../../composables/usePokemons'
 
 const { list, initialLoad, scrollContainerRef } = usePokemons()
 

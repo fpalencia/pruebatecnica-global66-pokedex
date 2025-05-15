@@ -14,7 +14,7 @@ export const usePokemonItem = (name: string | Ref<string>) => {
     queryFn: () =>
       getPokemonById(typeof name === 'string' ? name.toLowerCase() : name.value.toLowerCase()),
     staleTime: 1000 * 60 * 30,
-    retry: 2
+    retry: 4
   })
 
   return {

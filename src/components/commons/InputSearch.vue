@@ -1,15 +1,38 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, watchEffect } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 
-const searchQuery = ref('');
+const route = useRoute()
+const router = useRouter()
+
+const valueInput = ref<string>(route.query.name as string)
+
+const searchPokemon = async (namePokemon: string) => {
+  router.push({ name: 'pokemon-search', query: { name: namePokemon } })
+}
+
+const handleSearch = () => {
+  if (valueInput.value && valueInput.value.trim()) {
+    searchPokemon(valueInput.value.trim())
+  }
+}
+
+const clearSearch = () => {
+  valueInput.value = ''
+  router.push({ name: 'pokemons' })
+}
+
+watchEffect(() => {
+  valueInput.value = route.query.name as string
+})
 </script>
 
 <template>
-  <div class="relative w-full max-w-xl mx-auto py-10">
-    <div class="flex items-center bg-white rounded-md shadow-sm p-3">
+  <div class="relative w-full max-w-xl mx-auto py-8">
+    <div class="flex items-center bg-white rounded-lg shadow-md p-2 hover:shadow-lg transition-shadow duration-300">
       <svg 
         xmlns="http://www.w3.org/2000/svg" 
-        class="h-5 w-5 text-gray-400" 
+        class="h-6 w-6 text-gray-500 mr-3" 
         fill="none" 
         viewBox="0 0 24 24" 
         stroke="currentColor"
@@ -22,11 +45,34 @@ const searchQuery = ref('');
         />
       </svg>
       <input
-        v-model="searchQuery"
+        class="w-full py-2 px-3 text-lg focus:outline-none placeholder-gray-400"
         type="text"
-        placeholder="Search"
-        class="w-full px-3 py-1 outline-none text-gray-700"
+        name="search"
+        placeholder="Buscar Pokémon..."
+        v-model="valueInput"
+        @keyup.enter="handleSearch"
       />
+      <button 
+        v-if="valueInput" 
+        @click="clearSearch" 
+        class="text-gray-500 hover:text-gray-700 focus:outline-none"
+        aria-label="Limpiar búsqueda"
+      >
+        <svg 
+          xmlns="http://www.w3.org/2000/svg" 
+          class="h-5 w-5" 
+          fill="none" 
+          viewBox="0 0 24 24" 
+          stroke="currentColor"
+        >
+          <path 
+            stroke-linecap="round" 
+            stroke-linejoin="round" 
+            stroke-width="2" 
+            d="M6 18L18 6M6 6l12 12" 
+          />
+        </svg>
+      </button>
     </div>
   </div>
 </template>

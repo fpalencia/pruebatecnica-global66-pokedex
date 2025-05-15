@@ -3,9 +3,9 @@ import { usePokemonItem } from '../composables/usePokemonItem';
 import { useClipboard } from '@vueuse/core';
 
   
-export const usePokemonCardDetails = (name_pokemon: string) => {
+export const usePokemonCardDetails = (pokemonName: string) => {
 
-  const { isLoading, pokemon, isFetching } = usePokemonItem(name_pokemon)
+  const { isLoading, pokemon, isFetching } = usePokemonItem(pokemonName)
 
   function capitalizeFirstLetter(text: string) {
     return text.charAt(0).toUpperCase() + text.slice(1)
