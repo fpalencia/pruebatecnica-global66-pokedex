@@ -2,11 +2,13 @@
 import BtnAddFavorite from '../commons/BtnAddFavorite.vue';
 import PokemonCardDetails from '../commons/modal/PokemonCardDetails.vue';
 import { ref } from 'vue';
-interface Props {
+
+type Props = {
   pokemon: string
 }
 
-const props = defineProps<Props>()
+const { pokemon } = defineProps<Props>()
+
 const showModal = ref(false)
 
 const onClickShowModal = () => {

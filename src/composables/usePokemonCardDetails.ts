@@ -13,12 +13,11 @@ export const usePokemonCardDetails = (pokemonName: string) => {
 
   const pokemonInfo = computed(() => {
     if (!pokemon.value) return ''
-    const noVan = ['id', 'frontSprite']
+    const excludedProperties = ['id', 'frontSprite']
     
-    // Crear una cadena de texto con las propiedades que queremos copiar
     return Object.entries(pokemon.value)
-      .filter(([key]) => !noVan.includes(key))
-      .map(([key, value]) => `${key}: ${value}`)
+      .filter(([key]) => !excludedProperties.includes(key))
+      .map(([key, value]) => `${capitalizeFirstLetter(key)}: ${value}`)
       .join(', ')
   })
 
@@ -32,5 +31,4 @@ export const usePokemonCardDetails = (pokemonName: string) => {
     capitalizeFirstLetter,
     isFetching
   }
-  
 }

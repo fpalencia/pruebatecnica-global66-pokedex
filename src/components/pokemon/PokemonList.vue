@@ -5,12 +5,12 @@ interface Props {
   pokemons: string[]
 }
 
-const props = defineProps<Props>()
+const { pokemons } = defineProps<Props>()
 
 </script>
 
 <template>
   <div class="flex flex-col items-center gap-2.5 w-full">
-    <PokemonItem v-for="pokemon in pokemons" :key="pokemon.id" :pokemon="pokemon" />
+    <PokemonItem v-for="(pokemon, index) in pokemons" :key="index" :pokemon="pokemon" />
   </div>
 </template>

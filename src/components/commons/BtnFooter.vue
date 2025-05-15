@@ -18,10 +18,6 @@ const updateActiveFilterFromRoute = () => {
   }
 };
 
-onMounted(updateActiveFilterFromRoute);
-
-watch(() => route.path, updateActiveFilterFromRoute);
-
 const changeFilter = (filter: string) => {
   activeFilter.value = filter;
   emit('change-filter', filter);
@@ -32,6 +28,10 @@ const changeFilter = (filter: string) => {
     router.push('/pokemons');
   }
 };
+
+onMounted(updateActiveFilterFromRoute);
+
+watch(() => route.path, updateActiveFilterFromRoute);
 </script>
 
 <template>

@@ -5,25 +5,25 @@ import { useRoute, useRouter } from 'vue-router'
 const route = useRoute()
 const router = useRouter()
 
-const valueInput = ref<string>(route.query.name as string)
+const valueInputSearch = ref<string>(route.query.name as string || '')
 
 const searchPokemon = async (namePokemon: string) => {
   router.push({ name: 'pokemon-search', query: { name: namePokemon } })
 }
 
 const handleSearch = () => {
-  if (valueInput.value && valueInput.value.trim()) {
-    searchPokemon(valueInput.value.trim())
+  if (valueInputSearch.value && valueInputSearch.value.trim()) {
+    searchPokemon(valueInputSearch.value.trim())
   }
 }
 
 const clearSearch = () => {
-  valueInput.value = ''
+  valueInputSearch.value = ''
   router.push({ name: 'pokemons' })
 }
 
 watchEffect(() => {
-  valueInput.value = route.query.name as string
+  valueInputSearch.value = route.query.name as string || ''
 })
 </script>
 
@@ -48,12 +48,12 @@ watchEffect(() => {
         class="w-full py-2 px-3 text-lg focus:outline-none placeholder-gray-400"
         type="text"
         name="search"
-        placeholder="Buscar Pokémon..."
-        v-model="valueInput"
+        placeholder="Search pokemon..."
+        v-model="valueInputSearch"
         @keyup.enter="handleSearch"
       />
       <button 
-        v-if="valueInput" 
+        v-if="valueInputSearch" 
         @click="clearSearch" 
         class="text-gray-500 hover:text-gray-700 focus:outline-none"
         aria-label="Limpiar búsqueda"

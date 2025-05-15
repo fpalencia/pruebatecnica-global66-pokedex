@@ -1,16 +1,10 @@
 <script setup lang="ts">
 import IconPikachu from '../components/icons/IconPikachu.vue'
 import { useRouter } from 'vue-router'
-import { getPokemons } from '../services/getPokemonsServices'
-import { watchEffect } from 'vue'
 import { usePokemonStore } from '../store/usePokemonStore'
 
 const store = usePokemonStore()
 const router = useRouter()
-
-watchEffect(() => {
-  console.log(store.initialLoad)
-})
 
 const handleGetStarted = () => {
   store.setInitialLoad(true)

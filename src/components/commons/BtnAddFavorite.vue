@@ -1,10 +1,8 @@
 <script setup lang="ts">
 import IconFavorite from '../icons/IconFavorite.vue';
-import { ref } from 'vue';
 import { usePokemonStore } from '../../store/usePokemonStore';
-// Estado para controlar si está en favoritos o no
 
-interface Props {
+type Props = {
   name: string
 }
 
