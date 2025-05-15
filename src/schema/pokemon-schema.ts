@@ -5,6 +5,12 @@ export const PokemonSchema = z.object({
   name: z.string(),
   weight: z.number(),
   height: z.number(),
-  frontSprite: z.string(),
-  types: z.array(z.string())
+  frontSprite: z.string().nullish(),
+  types: z.array(
+    z.object({
+      type: z.object({
+        name: z.string()
+      })
+    }).transform(typeObj => typeObj.type.name)
+  )
 });

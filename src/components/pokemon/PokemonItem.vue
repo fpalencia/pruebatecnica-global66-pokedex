@@ -17,11 +17,11 @@ const onClickShowModal = () => {
 <template>
   <div class="flex justify-between items-center p-2 bg-white rounded-md shadow-sm w-full max-w-xl transition-all duration-200 hover:shadow-md cursor-pointer" @click="onClickShowModal">
     <span class="text-[22px] pl-[10px] font-normal capitalize">{{ pokemon }}</span>
-    <BtnAddFavorite :name="pokemon" />
+    <BtnAddFavorite :name="pokemon" @click.stop />
   </div>
   <Teleport to="body">
     <Transition name="favorite-transition" mode="out-in">
-      <PokemonCardDetails v-if="showModal" @close="onClickShowModal" />
+      <PokemonCardDetails :pokemon="pokemon" v-if="showModal" @close="onClickShowModal" />
     </Transition>
   </Teleport>
 </template>

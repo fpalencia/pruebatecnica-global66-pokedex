@@ -5,11 +5,11 @@ interface VirtualListOptions {
   overscan?: number
 }
 
-export function useCustomVirtualList(list: Ref<any[]>, options: VirtualListOptions) {
+export function useCustomVirtualList<T = any>(list: Ref<T[]>, options: VirtualListOptions) {
   const containerRef = ref<HTMLElement | null>(null)
   const scrollTop = ref(0)
   const viewportHeight = ref(0)
-  const internalList = ref<any[]>([])
+  const internalList = ref<T[]>([])
 
   const overscan = options.overscan || 5
   const itemHeight = options.itemHeight
