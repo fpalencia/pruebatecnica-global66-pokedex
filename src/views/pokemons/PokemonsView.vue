@@ -1,7 +1,12 @@
 <script setup lang="ts">
-import IconPokeball from '../../components/icons/IconPokeball.vue'
+import IconPokeball from '../../assets/icons/IconPokeball.vue'
 import PokemonList from '../../components/pokemon/PokemonList.vue'
 import { usePokemons } from '../../composables/usePokemons'
+
+type Pokemon = {
+  data: string
+  index: number
+}
 
 const { list, initialLoad, scrollContainerRef } = usePokemons()
 
@@ -13,7 +18,7 @@ const { list, initialLoad, scrollContainerRef } = usePokemons()
       <IconPokeball class="w-16 h-16 animate-spin" />
     </div>
     <template v-else>
-      <PokemonList :pokemons="list.map((value) => value.data)" />
+      <PokemonList :pokemons="list.map((value: Pokemon) => value.data)" />
       <div v-if="list.length > 0" class="py-6 text-center flex flex-col items-center justify-center">
         <IconPokeball class="w-10 h-10 animate-spin mx-auto" />
       </div>

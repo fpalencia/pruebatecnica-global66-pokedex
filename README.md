@@ -58,5 +58,29 @@ Este proyecto es una aplicación web tipo Pokedex desarrollada como prueba técn
 ├── store/            # Gestión de estado (Pinia)
 ├── types/            # Definiciones de TypeScript
 ├── views/            # Páginas principales
+├── App.vue
+├── main.ts
 
 ```
+
+## Pruebas Unitarias
+
+El proyecto incluye pruebas unitarias para los componentes principales utilizando Vitest y Vue Test Utils.
+
+### Ejecutar las pruebas
+
+Para ejecutar todas las pruebas unitarias:
+
+```bash
+npm run test
+```
+
+Para ejecutar las pruebas en modo watch (útil durante el desarrollo):
+
+```bash
+npm run test:watch
+```
+
+### Estructura de las pruebas
+
+Las pruebas se encuentran en el directorio `src/__test__` y siguen la misma estructura que los componentes del proyecto. Cada componente principal tiene su propio archivo de prueba.
