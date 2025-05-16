@@ -20,6 +20,8 @@ Este proyecto es una aplicación web tipo Pokedex desarrollada como prueba técn
 - **API**: PokeAPI (https://pokeapi.co/)
 - **HTTP Client**: Axios
 - **Validación de Datos**: Zod
+- **Utilidades**: VueUse
+- **Gestión de Consultas**: TanStack Query
 - **Testing**: Vitest, Vue Test Utils
 
 ## 🚀 Instalación
