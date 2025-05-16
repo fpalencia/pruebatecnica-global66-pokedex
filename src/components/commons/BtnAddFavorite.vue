@@ -8,15 +8,14 @@ type Props = {
 
 const { name } = defineProps<Props>()
 
-const store = usePokemonStore();
+const { isFavorite, addFavorite, removeFavorite } = usePokemonStore();
 
-const toggleFavorite = (name: string) => {
-
-  if (store.isFavorite(name)) {
-    store.removeFavorite(name);
+const handleToggleFavorite = (name: string) => {
+  if (isFavorite(name)) {
+    removeFavorite(name);
     return
   } else {
-    store.addFavorite(name);
+    addFavorite(name);
   }
 };
 </script>
@@ -24,8 +23,8 @@ const toggleFavorite = (name: string) => {
 <template>
   <button 
     class="w-[44px] h-[44px] rounded-full border-none cursor-pointer bg-gray-light flex items-center justify-center"
-    @click="toggleFavorite(name)"
+    @click="handleToggleFavorite(name)"
   >
-    <IconFavorite :color="store.isFavorite(name) ? '#ECA539' : '#BFBFBF'" />
+    <IconFavorite :color="isFavorite(name) ? '#ECA539' : '#BFBFBF'" />
   </button>
 </template>

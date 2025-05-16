@@ -14,6 +14,7 @@ describe('BtnAddFavorite', () => {
   const mockAddFavorite = vi.fn()
   const mockRemoveFavorite = vi.fn()
   const mockIsFavoriteExists = vi.fn()
+  const mockToggleFavorite = vi.fn()
   
   beforeEach(() => {
     // Crear una nueva instancia de pinia para cada test
@@ -26,7 +27,8 @@ describe('BtnAddFavorite', () => {
     vi.mocked(usePokemonStore).mockReturnValue({
       addFavorite: mockAddFavorite,
       removeFavorite: mockRemoveFavorite,
-      isFavorite: mockIsFavoriteExists
+      isFavorite: mockIsFavoriteExists,
+      toggleFavorite: mockToggleFavorite
     } as any)
   })
   
@@ -128,5 +130,15 @@ describe('BtnAddFavorite', () => {
     
     // Verificar que se llama a isFavoriteExists con el nombre correcto
     expect(mockIsFavoriteExists).toHaveBeenCalledWith('charizard')
+  })
+  
+  it('should toggle favorite status for a pokemon', () => {
+    const store = usePokemonStore();
+    const spy = vi.spyOn(store, 'toggleFavorite');
+    
+    // Acción, por ejemplo:
+    store.toggleFavorite('pikachu');
+    
+    expect(spy).toHaveBeenCalledWith('pikachu');
   })
 })
