@@ -43,7 +43,7 @@ Este proyecto es una aplicación web tipo Pokedex desarrollada como prueba técn
 4. Abre tu navegador en `http://localhost:5173`
 
 ## 📂 Estructura del Proyecto
-
+```
 ├── src/ # Directorio principal del código fuente
 │ ├── api/ # Configuración y funciones para integraciones con APIs externas
 │ │
@@ -81,7 +81,7 @@ Este proyecto es una aplicación web tipo Pokedex desarrollada como prueba técn
 │ ├── main.ts # Punto de entrada principal de la aplicación
 │ ├── style.css # Estilos globales
 │ └── vite-env.d.ts # Definiciones de tipos para Vite
-
+```
 ## Detalles de la Estructura
 
 - **api/**: Contiene la configuración de axios y los endpoints para las llamadas a la PokeAPI.
