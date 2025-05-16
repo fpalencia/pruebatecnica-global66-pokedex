@@ -172,7 +172,7 @@ describe('PokemonCardDetails', () => {
     
     // Verificar que se emitió el evento
     expect(wrapper.emitted('update:isOpen')).toBeTruthy();
-    expect(wrapper.emitted('update:isOpen')[0]).toEqual([false]);
+    expect(wrapper.emitted('update:isOpen')?.[0]).toEqual([false]);
   });
 
   it('no se renderiza cuando isOpen es false', async () => {

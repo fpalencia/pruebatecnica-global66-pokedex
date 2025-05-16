@@ -18,23 +18,27 @@ export const usePokemonStore = defineStore('pokemons', () => {
   }
 
   const addFavorite = (pokemonName: string) => {
-    if (isFavorite(pokemonName)) return;
-    favorites.value = { ...favorites.value, [pokemonName]: pokemonName }
+    const normalizedName = pokemonName.toLowerCase();
+    if (isFavorite(normalizedName)) return;
+    favorites.value = { ...favorites.value, [normalizedName]: normalizedName }
   }
 
   const removeFavorite = (pokemonName: string) => {
-    if (!isFavorite(pokemonName)) return;
+    const normalizedName = pokemonName.toLowerCase();
+    if (!isFavorite(normalizedName)) return;
     const newFavorites = { ...favorites.value }
-    delete newFavorites[pokemonName]
+    delete newFavorites[normalizedName]
     favorites.value = newFavorites
   }
 
   const isFavorite = (pokemonName: string): boolean => {
-    return Boolean(favorites.value[pokemonName])
+    const normalizedName = pokemonName.toLowerCase();
+    return Boolean(favorites.value[normalizedName])
   }
 
   const toggleFavorite = (pokemonName: string): void => {
-    isFavorite(pokemonName) ? removeFavorite(pokemonName) : addFavorite(pokemonName)
+    const normalizedName = pokemonName.toLowerCase();
+    isFavorite(normalizedName) ? removeFavorite(normalizedName) : addFavorite(normalizedName)
   }
 
   return {
