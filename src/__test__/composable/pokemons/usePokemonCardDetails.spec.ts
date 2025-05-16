@@ -118,7 +118,7 @@ describe('usePokemonCardDetails', () => {
     
     // Si source es un objeto con una propiedad value (como un ref)
     if (typeof clipboardArgs.source === 'object' && clipboardArgs.source !== null) {
-      expect(clipboardArgs.source.value).toContain('Name: pikachu')
+      expect(clipboardArgs.source.value).toContain('Name: Pikachu')
       expect(clipboardArgs.source.value).toContain('Height: 4')
       expect(clipboardArgs.source.value).toContain('Weight: 60')
       expect(clipboardArgs.source.value).toContain('Type: electric')
