@@ -2,7 +2,7 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { mount } from '@vue/test-utils';
 import PokemonsFavoriteView from '../../../views/pokemons-favorite/PokemonsFavoriteView.vue';
 import PokemonList from '../../../components/pokemon/PokemonList.vue';
-import { usePokemonFavorite } from '../../../composables/usePokemonFavorite';
+import { usePokemonFavorite } from '../../../composables/pokemons/usePokemonFavorite';
 import { ref } from 'vue';
 
 // Mock del componente PokemonList
@@ -17,7 +17,7 @@ vi.mock('../../../components/pokemon/PokemonList.vue', () => ({
 }));
 
 // Mock del composable usePokemonFavorite
-vi.mock('../../../composables/usePokemonFavorite', () => ({
+vi.mock('../../../composables/pokemons/usePokemonFavorite', () => ({
   usePokemonFavorite: vi.fn()
 }));
 

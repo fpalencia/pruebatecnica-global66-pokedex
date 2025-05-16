@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
-import { usePokemonSearch } from '../../composables/usePokemonSearch'
+import { usePokemonSearch } from '../../../composables/pokemons/usePokemonSearch'
 import { useRoute, useRouter } from 'vue-router'
 import { nextTick } from 'vue'
 import type { Router, RouteLocationNormalizedLoaded } from 'vue-router'

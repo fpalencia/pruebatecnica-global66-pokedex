@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { defineEmits, ref } from 'vue';
 import BtnAddFavorite from '../BtnAddFavorite.vue';
-import { usePokemonCardDetails } from '../../../composables/usePokemonCardDetails';
+import { usePokemonCardDetails } from '../../../composables/pokemons/usePokemonCardDetails';
 import IconPokeball from '../../../assets/icons/IconPokeball.vue';
 import { capitalize } from '../../../helpers';
 type Props = {

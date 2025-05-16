@@ -1,7 +1,7 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
-import { usePokemonsList } from '../../composables/usePokemonsList'
+import { usePokemonsList } from '../../../composables/pokemons/usePokemonsList'
 import { useQuery } from '@tanstack/vue-query'
-import { getPokemons } from '../../services/getPokemonsServices'
+import { getPokemons } from '../../../services/getPokemonsServices'
 import { ref } from 'vue'
 
 // Mock de @tanstack/vue-query
@@ -11,7 +11,7 @@ vi.mock('@tanstack/vue-query', () => ({
 }))
 
 // Mock del servicio
-vi.mock('../../services/getPokemonsServices', () => ({
+vi.mock('../../../services/getPokemonsServices', () => ({
   getPokemons: vi.fn()
 }))
 

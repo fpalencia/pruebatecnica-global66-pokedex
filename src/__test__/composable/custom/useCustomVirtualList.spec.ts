@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeEach } from 'vitest'
 import { mount } from '@vue/test-utils'
 import { defineComponent, ref, h } from 'vue'
-import { useCustomVirtualList } from '../../composables/useCustomVirtualList'
+import { useCustomVirtualList } from '../../../composables/custom/useCustomVirtualList'
 
 describe('useCustomVirtualList', () => {
   // Mock para clientHeight

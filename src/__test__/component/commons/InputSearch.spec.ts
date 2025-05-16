@@ -1,11 +1,11 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { mount } from '@vue/test-utils'
 import InputSearch from '../../../components/commons/InputSearch.vue'
-import { usePokemonSearch } from '../../../composables/usePokemonSearch'
+import { usePokemonSearch } from '../../../composables/pokemons/usePokemonSearch'
 import { ref, nextTick } from 'vue'
 
 // Mock del composable usePokemonSearch
-vi.mock('../../../composables/usePokemonSearch', () => ({
+vi.mock('../../../composables/pokemons/usePokemonSearch', () => ({
   usePokemonSearch: vi.fn()
 }))
 

@@ -1,7 +1,7 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
-import { usePokemonItem } from '../../composables/usePokemonItem'
+import { usePokemonItem } from '../../../composables/pokemons/usePokemonItem'
 import { useQuery } from '@tanstack/vue-query'
-import { getPokemonById } from '../../services/getPokemonsServices'
+import { getPokemonById } from '../../../services/getPokemonsServices'
 import { ref } from 'vue'
 
 // Mock de las dependencias
@@ -9,7 +9,7 @@ vi.mock('@tanstack/vue-query', () => ({
   useQuery: vi.fn()
 }))
 
-vi.mock('../../services/getPokemonsServices', () => ({
+vi.mock('../../../services/getPokemonsServices', () => ({
   getPokemonById: vi.fn()
 }))
 

@@ -44,24 +44,77 @@ Este proyecto es una aplicación web tipo Pokedex desarrollada como prueba técn
 
 ## 📂 Estructura del Proyecto
 
-```
+├── src/ # Directorio principal del código fuente
+│ ├── api/ # Configuración y funciones para integraciones con APIs externas
+│ │
+│ ├── assets/ # Recursos estáticos (imágenes, fuentes, etc.)
+│ │
+│ ├── components/ # Componentes reutilizables de Vue
+│ │ ├── commons/ # Componentes genéricos utilizables en toda la aplicación
+│ │ │ ├── modal/ # Componentes para ventanas modales
+│ │ │
+│ │ ├── pokemon/ # Componentes específicos relacionados con Pokémon
+│ │
+│ ├── composables/ # Lógica reutilizable extraída en composables (Composition API)
+│ │ ├── custom/ # Composables personalizados generales
+│ │ ├── pokemons/ # Composables específicos para gestionar Pokémon
+│ │
+│ ├── helpers/ # Funciones auxiliares y utilidades
+│ │
+│ ├── layout/ # Componentes de estructura y layout base de la aplicación
+│ │
+│ ├── router/ # Configuración de rutas con Vue Router
+│ │
+│ ├── schema/ # Esquemas de validación (Zod) y definición de estructuras de datos
+│ │
+│ ├── services/ # Servicios para lógica de negocio y comunicación con APIs
+│ │
+│ ├── store/ # Gestión de estado global con Pinia
+│ │
+│ ├── types/ # Definiciones de tipos TypeScript
+│ │
+│ ├── views/ # Páginas o vistas principales de la aplicación
+│ │
+│ ├── test/ # Tests unitarios y de integración
+│ │
+│ ├── App.vue # Componente raíz de la aplicación
+│ ├── main.ts # Punto de entrada principal de la aplicación
+│ ├── style.css # Estilos globales
+│ └── vite-env.d.ts # Definiciones de tipos para Vite
 
-├── api/              # Configuración y funciones para llamadas a la API
-├── assets/           # Recursos estáticos
-├── components/       # Componentes reutilizables
-├── composables/      # Composables
-├── helpers/          # Funciones auxiliares
-├── layout/           # Componentes de estructura y layout
-├── router/           # Configuración de enrutamiento
-├── schema/           # Esquemas de validación y definición de datos
-├── services/         # Servicios para API y lógica de negocio
-├── store/            # Gestión de estado (Pinia)
-├── types/            # Definiciones de TypeScript
-├── views/            # Páginas principales
-├── App.vue
-├── main.ts
+## Detalles de la Estructura
 
-```
+- **api/**: Contiene la configuración de axios y los endpoints para las llamadas a la PokeAPI.
+  
+- **assets/**: Almacena recursos estáticos como imágenes, iconos y otros archivos multimedia utilizados en la aplicación.
+
+- **components/**: 
+  - **commons/**: Componentes generales como botones, inputs, loaders, etc.
+  - **pokemon/**: Componentes específicos para mostrar tarjetas de Pokémon, listas, etc.
+
+- **composables/**: 
+  - **custom/**: Hooks personalizados para funcionalidades genéricas (ej: useLocalStorage, useDebounce).
+  - **pokemons/**: Hooks específicos para el manejo de datos de Pokémon (ej: usePokemonList, usePokemonDetails).
+
+- **helpers/**: Funciones utilitarias para formateo de datos, cálculos, manipulación de strings, etc.
+
+- **layout/**: Componentes estructurales como Header, Footer, Sidebar y el layout principal.
+
+- **router/**: Configuración de Vue Router, definición de rutas y middlewares.
+
+- **schema/**: Esquemas Zod para validar y tipar los datos recibidos de la API.
+
+- **services/**: 
+  - Implementación de servicios para comunicación con APIs.
+  - Lógica para transformar y adaptar datos entre la API y la aplicación.
+
+- **store/**: Stores de Pinia para manejar el estado global (pokemonStore, favoritesStore, etc.).
+
+- **types/**: Definiciones de interfaces y tipos TypeScript utilizados en toda la aplicación.
+
+- **views/**: Páginas principales como Home, Favorites, PokemonDetail, etc.
+
+- **__test__/**: Tests unitarios y de integración organizados según la estructura de la aplicación.
 
 ## Pruebas Unitarias
 

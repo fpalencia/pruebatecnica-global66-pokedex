@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import IconPokeball from '../../assets/icons/IconPokeball.vue'
 import PokemonList from '../../components/pokemon/PokemonList.vue'
-import { usePokemons } from '../../composables/usePokemons'
+import { usePokemons } from '../../composables/pokemons/usePokemons'
 
 type Pokemon = {
   data: string
