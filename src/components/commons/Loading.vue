@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import IconPokeball from '../icons/IconPokeball.vue'
+import IconPokeball from '../../assets/icons/IconPokeball.vue'
 </script>
 
 <template>

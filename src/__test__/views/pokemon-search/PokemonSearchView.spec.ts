@@ -1,7 +1,7 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { mount } from '@vue/test-utils';
 import PokemonSearchView from '../../../views/pokemon-search/PokemonSearchView.vue';
-import IconPokeball from '../../../components/icons/IconPokeball.vue';
+import IconPokeball from '../../../assets/icons/IconPokeball.vue';
 import PokemonItem from '../../../components/pokemon/PokemonItem.vue';
 import { usePokemonItem } from '../../../composables/usePokemonItem';
 import { ref } from 'vue';

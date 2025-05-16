@@ -1,13 +1,13 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { mount } from '@vue/test-utils';
 import PokemonsView from '../../../views/pokemons/PokemonsView.vue';
-import IconPokeball from '../../../components/icons/IconPokeball.vue';
+import IconPokeball from '../../../assets/icons/IconPokeball.vue';
 import PokemonList from '../../../components/pokemon/PokemonList.vue';
 import { usePokemons } from '../../../composables/usePokemons';
 import { ref, computed } from 'vue';
 
 // Mock de los componentes y composables
-vi.mock('../../../components/icons/IconPokeball.vue', () => ({
+vi.mock('../../../assets/icons/IconPokeball.vue', () => ({
   default: {
     name: 'IconPokeball',
     template: '<div data-testid="icon-pokeball"></div>'

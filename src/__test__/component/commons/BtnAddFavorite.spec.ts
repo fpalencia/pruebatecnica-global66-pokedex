@@ -1,7 +1,7 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { mount } from '@vue/test-utils'
 import BtnAddFavorite from '../../../components/commons/BtnAddFavorite.vue'
-import IconFavorite from '../../../components/icons/IconFavorite.vue'
+import IconFavorite from '../../../assets/icons/IconFavorite.vue'
 import { usePokemonStore } from '../../../store/usePokemonStore'
 import { createPinia, setActivePinia } from 'pinia'
 

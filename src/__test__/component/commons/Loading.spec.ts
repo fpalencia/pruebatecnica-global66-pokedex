@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
 import Loading from '../../../components/commons/Loading.vue'
-import IconPokeball from '../../../components/icons/IconPokeball.vue'
+import IconPokeball from '../../../assets/icons/IconPokeball.vue'
 
 describe('Loading', () => {
   it('should render correctly', () => {
