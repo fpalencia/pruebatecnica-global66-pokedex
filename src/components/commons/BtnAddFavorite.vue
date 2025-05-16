@@ -12,7 +12,7 @@ const store = usePokemonStore();
 
 const toggleFavorite = (name: string) => {
 
-  if (store.isFavoriteExists(name)) {
+  if (store.isFavorite(name)) {
     store.removeFavorite(name);
     return
   } else {
@@ -26,6 +26,6 @@ const toggleFavorite = (name: string) => {
     class="w-[44px] h-[44px] rounded-full border-none cursor-pointer bg-gray-light flex items-center justify-center"
     @click="toggleFavorite(name)"
   >
-    <IconFavorite :color="store.isFavoriteExists(name) ? '#ECA539' : '#BFBFBF'" />
+    <IconFavorite :color="store.isFavorite(name) ? '#ECA539' : '#BFBFBF'" />
   </button>
 </template>

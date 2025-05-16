@@ -27,7 +27,7 @@ export const usePokemonStore = defineStore('pokemons', () => {
     favorites.value = newFavorites
   }
 
-  const isFavoriteExists = (pokemonName: string) => {
+  const isFavorite = (pokemonName: string) => {
     return favorites.value[pokemonName]
   }
 
@@ -36,7 +36,7 @@ export const usePokemonStore = defineStore('pokemons', () => {
     setInitialLoad,
     addFavorite,
     removeFavorite,
-    isFavoriteExists,
+    isFavorite,
     initialLoad,
     pokemons,
     favorites
