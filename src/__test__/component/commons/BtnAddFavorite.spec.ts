@@ -26,7 +26,7 @@ describe('BtnAddFavorite', () => {
     vi.mocked(usePokemonStore).mockReturnValue({
       addFavorite: mockAddFavorite,
       removeFavorite: mockRemoveFavorite,
-      isFavoriteExists: mockIsFavoriteExists
+      isFavorite: mockIsFavoriteExists
     } as any)
   })
   
