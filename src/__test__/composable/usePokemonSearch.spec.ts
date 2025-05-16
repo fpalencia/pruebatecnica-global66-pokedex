@@ -2,6 +2,7 @@ import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { usePokemonSearch } from '../../composables/usePokemonSearch'
 import { useRoute, useRouter } from 'vue-router'
 import { nextTick } from 'vue'
+import type { Router, RouteLocationNormalizedLoaded } from 'vue-router'
 
 // Mock de vue-router
 vi.mock('vue-router', () => ({
@@ -149,5 +150,21 @@ describe('usePokemonSearch', () => {
     
     // Verificar que searchValue se actualizó
     expect(updatedSearchValue.value).toBe('charizard');
+  })
+
+  it('should use custom router when provided', () => {
+    const mockRouter = {
+      push: vi.fn()
+    } as unknown as Router
+    
+    const mockRoute = {
+      query: { name: 'pikachu' }
+    } as unknown as RouteLocationNormalizedLoaded
+    
+    const { handleSearch } = usePokemonSearch(mockRoute, mockRouter)
+    
+    handleSearch()
+    
+    expect(mockRouter.push).toHaveBeenCalled()
   })
 })

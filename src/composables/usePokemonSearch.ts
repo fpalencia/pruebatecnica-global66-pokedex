@@ -1,30 +1,35 @@
 import { ref, watchEffect } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
+import type { Router, RouteLocationNormalizedLoaded } from 'vue-router'
 
-export function usePokemonSearch() {
-  const route = useRoute()
-  const router = useRouter()
+export const usePokemonSearch = (
+  customRoute?: RouteLocationNormalizedLoaded,
+  customRouter?: Router
+) => {
+  const route = customRoute || useRoute()
+  const router = customRouter || useRouter()
 
-  const searchValue = ref<string>(route.query.name as string || '')
+  const searchValue = ref(route.query.name as string || '')
 
-  const searchPokemon = async (namePokemon: string) => {
-    router.push({ name: 'pokemon-search', query: { name: namePokemon } })
-  }
+  watchEffect(() => {
+    searchValue.value = route.query.name as string || ''
+  })
 
   const handleSearch = () => {
-    if (searchValue.value && searchValue.value.trim()) {
-      searchPokemon(searchValue.value.trim())
+    if (searchValue.value.trim()) {
+      router.push({
+        name: 'pokemon-search',
+        query: { name: searchValue.value }
+      })
     }
   }
 
   const clearSearch = () => {
     searchValue.value = ''
-    router.push({ name: 'pokemons' })
+    router.push({
+      name: 'pokemons'
+    })
   }
-
-  watchEffect(() => {
-    searchValue.value = route.query.name as string || ''
-  })
 
   return {
     searchValue,
