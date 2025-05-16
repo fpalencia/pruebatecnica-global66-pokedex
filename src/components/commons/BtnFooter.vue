@@ -11,46 +11,45 @@ const route = useRoute();
 const activeFilter = ref('all');
 
 const updateActiveFilterFromRoute = () => {
-  if (route.path.includes('/favorites')) {
-    activeFilter.value = 'favorites';
-  } else if (route.path.includes('/pokemons')) {
-    activeFilter.value = 'all';
-  }
+  activeFilter.value = route.path.includes('/favorites') ? 'favorites' : 'all';
+};
+
+const changeFilter = (filter: string) => {
+  if (activeFilter.value === filter) return;
+  
+  activeFilter.value = filter;
+  emit('change-filter', filter);
+  
+  const path = filter === 'favorites' ? '/favorites' : '/pokemons';
+  router.push(path);
 };
 
 onMounted(updateActiveFilterFromRoute);
 
 watch(() => route.path, updateActiveFilterFromRoute);
-
-const changeFilter = (filter: string) => {
-  activeFilter.value = filter;
-  emit('change-filter', filter);
-  
-  if (filter === 'favorites') {
-    router.push('/favorites');
-  } else if (filter === 'all') {
-    router.push('/pokemons');
-  }
-};
 </script>
 
 <template>
   <div class="w-full flex gap-2 px-2 py-2 max-w-xl mx-auto">
     <button 
+      data-testid="all-button"
       @click="changeFilter('all')" 
       class="flex-1 py-2 flex justify-center items-center gap-2 rounded-full cursor-pointer"
-      :class="activeFilter === 'all' ? 'bg-red-500 text-white' : 'bg-gray-300 text-white'"
+      :class="activeFilter === 'all' ? 'bg-secondary' : 'bg-gray-medium'"
+      aria-label="Show all pokemons"
     >
-      <IconAll class="w-6 h-6" :color="activeFilter === 'all' ? 'white' : 'white'" />
-      <span class="text-lg font-medium">All</span>
+      <IconAll class="w-6 h-6" />
+      <span class="text-lg font-medium text-white">All</span>
     </button>
     
     <button 
+      data-testid="favorites-button"
       @click="changeFilter('favorites')" 
-      class="flex-1 py-2 flex justify-center items-center gap-2 rounded-full cursor-pointer"
-      :class="activeFilter === 'favorites' ? 'bg-red-500 text-white' : 'bg-gray-300 text-white'"
+      class="flex-1 py-2 flex justify-center items-center gap-2 rounded-full cursor-pointer text-white"
+      :class="activeFilter === 'favorites' ? 'bg-secondary' : 'bg-gray-medium'"
+      aria-label="Show favorite pokemons"
     >
-      <IconFavorite class="w-6 h-6" :color="activeFilter === 'favorites' ? 'white' : 'white'" />
+      <IconFavorite :color="activeFilter === 'favorites' ? 'white' : 'white'" class="w-6 h-6" />
       <span class="text-lg font-medium">Favorites</span>
     </button>
   </div>

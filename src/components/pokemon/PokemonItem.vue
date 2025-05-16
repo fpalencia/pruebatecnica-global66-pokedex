@@ -2,11 +2,13 @@
 import BtnAddFavorite from '../commons/BtnAddFavorite.vue';
 import PokemonCardDetails from '../commons/modal/PokemonCardDetails.vue';
 import { ref } from 'vue';
-interface Props {
+
+type Props = {
   pokemon: string
 }
 
-const props = defineProps<Props>()
+const { pokemon } = defineProps<Props>()
+
 const showModal = ref(false)
 
 const onClickShowModal = () => {
@@ -16,7 +18,7 @@ const onClickShowModal = () => {
 
 <template>
   <div class="flex justify-between items-center p-2 bg-white rounded-md shadow-sm w-full max-w-xl transition-all duration-200 hover:shadow-md cursor-pointer" @click="onClickShowModal">
-    <span class="text-[22px] pl-[10px] font-normal capitalize">{{ pokemon }}</span>
+    <span class="text-[22px] pl-[10px] font-normal text-dark capitalize">{{ pokemon }}</span>
     <BtnAddFavorite :name="pokemon" @click.stop />
   </div>
   <Teleport to="body">

@@ -1,35 +1,12 @@
 <script setup lang="ts">
-import { ref, watchEffect } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
+import { usePokemonSearch } from '../../composables/usePokemonSearch'
 
-const route = useRoute()
-const router = useRouter()
-
-const valueInput = ref<string>(route.query.name as string)
-
-const searchPokemon = async (namePokemon: string) => {
-  router.push({ name: 'pokemon-search', query: { name: namePokemon } })
-}
-
-const handleSearch = () => {
-  if (valueInput.value && valueInput.value.trim()) {
-    searchPokemon(valueInput.value.trim())
-  }
-}
-
-const clearSearch = () => {
-  valueInput.value = ''
-  router.push({ name: 'pokemons' })
-}
-
-watchEffect(() => {
-  valueInput.value = route.query.name as string
-})
+const { searchValue, handleSearch, clearSearch } = usePokemonSearch()
 </script>
 
 <template>
   <div class="relative w-full max-w-xl mx-auto py-8">
-    <div class="flex items-center bg-white rounded-lg shadow-md p-2 hover:shadow-lg transition-shadow duration-300">
+    <div class="flex items-center bg-white rounded-lg shadow-md p-2 transition-shadow duration-300">
       <svg 
         xmlns="http://www.w3.org/2000/svg" 
         class="h-6 w-6 text-gray-500 mr-3" 
@@ -48,12 +25,12 @@ watchEffect(() => {
         class="w-full py-2 px-3 text-lg focus:outline-none placeholder-gray-400"
         type="text"
         name="search"
-        placeholder="Buscar Pokémon..."
-        v-model="valueInput"
+        placeholder="Search"
+        v-model="searchValue"
         @keyup.enter="handleSearch"
       />
       <button 
-        v-if="valueInput" 
+        v-if="searchValue" 
         @click="clearSearch" 
         class="text-gray-500 hover:text-gray-700 focus:outline-none"
         aria-label="Limpiar búsqueda"

@@ -29,7 +29,7 @@ export const getPokemons = async (page: number): Promise<Record<string, string>>
 };
 
 export const getPokemonById = async (name: string): Promise<Pokemon> => {
-  console.log("name", name)
+
   const response = await pokemonApi.get(`/pokemon/${name}`);
 
   const { data } = response;
@@ -39,7 +39,6 @@ export const getPokemonById = async (name: string): Promise<Pokemon> => {
   if (!responseData.success) {
     throw new Error("Datos inválidos");
   }
-  console.log(responseData.data);
   
   return {
     id: data.id,
