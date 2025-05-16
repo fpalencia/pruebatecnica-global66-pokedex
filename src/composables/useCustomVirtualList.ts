@@ -1,11 +1,11 @@
 import { ref, computed, type Ref, onMounted, watch } from 'vue'
 
-interface VirtualListOptions {
+type VirtualListOptions = {
   itemHeight: number
   overscan?: number
 }
 
-export function useCustomVirtualList<T = any>(list: Ref<T[]>, options: VirtualListOptions) {
+export const useCustomVirtualList = <T = any>(list: Ref<T[]>, options: VirtualListOptions) => {
   const containerRef = ref<HTMLElement | null>(null)
   const scrollTop = ref(0)
   const viewportHeight = ref(0)

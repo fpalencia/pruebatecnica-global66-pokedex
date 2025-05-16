@@ -58,16 +58,8 @@ describe('PokemonCardDetails', () => {
     // Verificar que el componente se renderiza
     expect(wrapper.exists()).toBe(true);
     
-    // Imprimir el HTML para depuración
-    console.log('HTML renderizado:', wrapper.html());
-    
-    // Verificar si el nombre está en minúsculas o con otra transformación
-    const textContent = wrapper.text();
-    expect(textContent.toLowerCase()).toContain('pikachu');
-    
-    // Alternativa: buscar por el nombre en minúsculas
-    const pokemonNameLowerCase = mockPokemon.name.toLowerCase();
-    expect(textContent.toLowerCase()).toContain(pokemonNameLowerCase);
+    // Verificar que el texto del componente contiene el nombre del Pokémon
+    expect(wrapper.text().toLowerCase()).toContain('pikachu');
   });
 
   it('muestra la imagen del Pokémon', () => {

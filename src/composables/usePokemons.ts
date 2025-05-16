@@ -4,12 +4,17 @@ import { usePokemonStore } from "../store/usePokemonStore";
 import { useInfiniteScroll } from '@vueuse/core'
 import { useCustomVirtualList } from "./useCustomVirtualList";
 
-export const usePokemons = () => {
-  const store = usePokemonStore();
+export const usePokemons = (
+  pokemonListProvider = usePokemonsList, 
+  storeProvider = usePokemonStore,
+  options = { maxPages: 40, scrollDistance: 10, scrollThrottle: 600 }
+) => {
+  
+  const store = storeProvider();
   const page = ref<number>(0);
   const pokemonsList = ref<string[]>([])
   const scrollContainerRef = ref<HTMLElement | null>(null);
-  const { pokemons } = usePokemonsList(page);
+  const { pokemons } = pokemonListProvider(page);
 
   const initialLoad = ref<boolean>(store.initialLoad);
 
@@ -31,7 +36,7 @@ export const usePokemons = () => {
 
   const fetchNextPage = async () => {
     if (pokemonsList.value.length === 0 && page.value === 0) return Promise.resolve()
-    if (page.value > 40) return Promise.resolve()
+    if (page.value > options.maxPages) return Promise.resolve()
 
     page.value = page.value + 1
 
@@ -45,8 +50,8 @@ export const usePokemons = () => {
   useInfiniteScroll(scrollContainerRef, () => {
     fetchNextPage()
   }, {
-    distance: 10,
-    throttle: 600
+    distance: options.scrollDistance,
+    throttle: options.scrollThrottle
   })
 
   return {
