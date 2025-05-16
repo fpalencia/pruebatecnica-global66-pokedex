@@ -124,6 +124,7 @@ Este proyecto es una aplicación web tipo Pokedex desarrollada como prueba técn
 │   │   ├── store
 │   │   │   └── usePokemonStore.spec.ts
 │   │   └── views
+            ├── HomeView.spec.ts
 │   │       ├── pokemons
 │   │       │   └── PokemonsView.spec.ts
 │   │       ├── pokemon-search
