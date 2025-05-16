@@ -49,7 +49,6 @@ Este proyecto es una aplicación web tipo Pokedex desarrollada como prueba técn
 ├── src
 │   ├── api
 │   │   └── pokemonApi.ts
-│   ├── App.vue
 │   ├── assets
 │   │   ├── icons
 │   │   │   ├── IconAll.vue
@@ -85,7 +84,6 @@ Este proyecto es una aplicación web tipo Pokedex desarrollada como prueba técn
 │   │   └── index.ts
 │   ├── layout
 │   │   └── Layout.vue
-│   ├── main.ts
 │   ├── router
 │   │   └── index.ts
 │   ├── schema
