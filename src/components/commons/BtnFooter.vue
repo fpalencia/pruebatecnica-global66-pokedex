@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { ref, onMounted, watch } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
-import IconAll from '../icons/IconAll.vue';
-import IconFavorite from '../icons/IconFavorite.vue';
+import IconAll from '../../assets/icons/IconAll.vue';
+import IconFavorite from '../../assets/icons/IconFavorite.vue';
 
 const emit = defineEmits(['change-filter']);
 const router = useRouter();

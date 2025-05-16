@@ -1,11 +1,11 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
-import { usePokemonCardDetails } from '../../composables/usePokemonCardDetails'
-import { usePokemonItem } from '../../composables/usePokemonItem'
+import { usePokemonCardDetails } from '../../../composables/pokemons/usePokemonCardDetails'
+import { usePokemonItem } from '../../../composables/pokemons/usePokemonItem'
 import { useClipboard } from '@vueuse/core'
 import { ref } from 'vue'
 
 // Mock de los composables que utiliza
-vi.mock('../../composables/usePokemonItem', () => ({
+vi.mock('../../../composables/pokemons/usePokemonItem', () => ({
   usePokemonItem: vi.fn()
 }))
 

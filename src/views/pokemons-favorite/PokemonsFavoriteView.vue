@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import PokemonList from '../../components/pokemon/PokemonList.vue'
-import { usePokemonFavorite } from '../../composables/usePokemonFavorite'
+import { usePokemonFavorite } from '../../composables/pokemons/usePokemonFavorite'
 
 const { pokemonsList } = usePokemonFavorite()
 </script>

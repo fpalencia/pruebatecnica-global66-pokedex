@@ -1,9 +1,9 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { mount } from '@vue/test-utils';
 import PokemonSearchView from '../../../views/pokemon-search/PokemonSearchView.vue';
-import IconPokeball from '../../../components/icons/IconPokeball.vue';
+import IconPokeball from '../../../assets/icons/IconPokeball.vue';
 import PokemonItem from '../../../components/pokemon/PokemonItem.vue';
-import { usePokemonItem } from '../../../composables/usePokemonItem';
+import { usePokemonItem } from '../../../composables/pokemons/usePokemonItem';
 import { ref } from 'vue';
 
 // Mock de los componentes y composables
@@ -24,7 +24,7 @@ vi.mock('../../../components/pokemon/PokemonItem.vue', () => ({
   }
 }));
 
-vi.mock('../../../composables/usePokemonItem', () => ({
+vi.mock('../../../composables/pokemons/usePokemonItem', () => ({
   usePokemonItem: vi.fn()
 }));
 

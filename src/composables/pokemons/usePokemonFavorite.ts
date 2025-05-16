@@ -1,4 +1,4 @@
-import { usePokemonStore } from "../store/usePokemonStore";
+import { usePokemonStore } from "../../store/usePokemonStore";
 import { ref, watchEffect } from "vue";
 
 export const usePokemonFavorite = () => {

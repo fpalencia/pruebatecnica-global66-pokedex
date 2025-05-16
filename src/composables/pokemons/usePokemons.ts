@@ -1,8 +1,8 @@
 import { ref, watchEffect } from "vue";
-import { usePokemonsList } from "./usePokemonsList";
-import { usePokemonStore } from "../store/usePokemonStore";
+import { usePokemonsList } from "../pokemons/usePokemonsList";
+import { usePokemonStore } from "../../store/usePokemonStore";
 import { useInfiniteScroll } from '@vueuse/core'
-import { useCustomVirtualList } from "./useCustomVirtualList";
+import { useCustomVirtualList } from "../custom/useCustomVirtualList";
 
 export const usePokemons = (
   pokemonListProvider = usePokemonsList, 

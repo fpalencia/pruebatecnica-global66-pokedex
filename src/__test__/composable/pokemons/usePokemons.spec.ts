@@ -1,17 +1,17 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
-import { usePokemons } from '../../composables/usePokemons'
-import { usePokemonsList } from '../../composables/usePokemonsList'
-import { usePokemonStore } from '../../store/usePokemonStore'
+import { usePokemons } from '../../../composables/pokemons/usePokemons'
+import { usePokemonsList } from '../../../composables/pokemons/usePokemonsList'
+import { usePokemonStore } from '../../../store/usePokemonStore'
 import { useInfiniteScroll } from '@vueuse/core'
-import { useCustomVirtualList } from '../../composables/useCustomVirtualList'
+import { useCustomVirtualList } from '../../../composables/custom/useCustomVirtualList'
 import { ref } from 'vue'
 
 // Mock de los módulos
-vi.mock('../../composables/usePokemonsList', () => ({
+vi.mock('../../../composables/pokemons/usePokemonsList', () => ({
   usePokemonsList: vi.fn()
 }))
 
-vi.mock('../../store/usePokemonStore', () => ({
+vi.mock('../../../store/usePokemonStore', () => ({
   usePokemonStore: vi.fn()
 }))
 
@@ -19,7 +19,7 @@ vi.mock('@vueuse/core', () => ({
   useInfiniteScroll: vi.fn()
 }))
 
-vi.mock('../../composables/useCustomVirtualList', () => ({
+vi.mock('../../../composables/custom/useCustomVirtualList', () => ({
   useCustomVirtualList: vi.fn()
 }))
 

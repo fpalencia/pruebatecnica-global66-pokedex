@@ -1,5 +1,5 @@
 import { computed } from 'vue';
-import { usePokemonItem } from '../composables/usePokemonItem';
+import { usePokemonItem } from '../pokemons/usePokemonItem';
 import { useClipboard } from '@vueuse/core';
 
   

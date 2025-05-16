@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import IconPikachu from '../components/icons/IconPikachu.vue'
+import IconPikachu from '../assets/icons/IconPikachu.vue'
 import { useRouter } from 'vue-router'
 import { usePokemonStore } from '../store/usePokemonStore'
 

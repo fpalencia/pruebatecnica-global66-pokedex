@@ -20,6 +20,8 @@ Este proyecto es una aplicación web tipo Pokedex desarrollada como prueba técn
 - **API**: PokeAPI (https://pokeapi.co/)
 - **HTTP Client**: Axios
 - **Validación de Datos**: Zod
+- **Utilidades**: VueUse
+- **Gestión de Consultas**: TanStack Query
 - **Testing**: Vitest, Vue Test Utils
 
 ## 🚀 Instalación
@@ -46,17 +48,123 @@ Este proyecto es una aplicación web tipo Pokedex desarrollada como prueba técn
 
 ```
 
-├── api/              # Configuración y funciones para llamadas a la API
-├── assets/           # Recursos estáticos
-├── components/       # Componentes reutilizables
-├── composables/      # Composables
-├── helpers/          # Funciones auxiliares
-├── layout/           # Componentes de estructura y layout
-├── router/           # Configuración de enrutamiento
-├── schema/           # Esquemas de validación y definición de datos
-├── services/         # Servicios para API y lógica de negocio
-├── store/            # Gestión de estado (Pinia)
-├── types/            # Definiciones de TypeScript
-├── views/            # Páginas principales
+├── src
+│   ├── api
+│   │   └── pokemonApi.ts
+│   ├── assets
+│   │   ├── icons
+│   │   │   ├── IconAll.vue
+│   │   │   ├── IconClose.vue
+│   │   │   ├── IconFavorite.vue
+│   │   │   ├── IconPikachu.vue
+│   │   │   └── IconPokeball.vue
+│   │   └── images
+│   │       ├── background-image.webp
+│   │       └── WelcomeImage.vue
+│   ├── components
+│   │   ├── commons
+│   │   │   ├── BtnAddFavorite.vue
+│   │   │   ├── BtnFooter.vue
+│   │   │   ├── InputSearch.vue
+│   │   │   ├── Loading.vue
+│   │   │   └── modal
+│   │   │       └── PokemonCardDetails.vue
+│   │   └── pokemon
+│   │       ├── PokemonItem.vue
+│   │       └── PokemonList.vue
+│   ├── composables
+│   │   ├── custom
+│   │   │   └── useCustomVirtualList.ts
+│   │   └── pokemons
+│   │       ├── usePokemonCardDetails.ts
+│   │       ├── usePokemonFavorite.ts
+│   │       ├── usePokemonItem.ts
+│   │       ├── usePokemonSearch.ts
+│   │       ├── usePokemonsList.ts
+│   │       └── usePokemons.ts
+│   ├── helpers
+│   │   └── index.ts
+│   ├── layout
+│   │   └── Layout.vue
+│   ├── router
+│   │   └── index.ts
+│   ├── schema
+│   │   ├── pokemon-list-response-schema.ts
+│   │   ├── pokemon-response-schema.ts
+│   │   └── pokemon-schema.ts
+│   ├── services
+│   │   └── getPokemonsServices.ts
+│   ├── store
+│   │   └── usePokemonStore.ts
+│   ├── style.css
+│   ├── __test__
+│   │   ├── component
+│   │   │   ├── commons
+│   │   │   │   ├── BtnAddFavorite.spec.ts
+│   │   │   │   ├── BtnFooter.spec.ts
+│   │   │   │   ├── InputSearch.spec.ts
+│   │   │   │   ├── Loading.spec.ts
+│   │   │   │   └── modal
+│   │   │   │       └── PokemonCardDetails.spec.ts
+│   │   │   └── pokemon
+│   │   │       ├── PokemonItem.spec.ts
+│   │   │       └── PokemonList.spec.ts
+│   │   ├── composable
+│   │   │   ├── custom
+│   │   │   │   └── useCustomVirtualList.spec.ts
+│   │   │   └── pokemons
+│   │   │       ├── usePokemonCardDetails.spec.ts
+│   │   │       ├── usePokemonFavorite.spec.ts
+│   │   │       ├── usePokemonItem.spec.ts
+│   │   │       ├── usePokemonSearch.spec.ts
+│   │   │       ├── usePokemonsList.spec.ts
+│   │   │       └── usePokemons.spec.ts
+│   │   ├── helpers
+│   │   │   └── index.spec.ts
+│   │   ├── store
+│   │   │   └── usePokemonStore.spec.ts
+│   │   └── views
+│   │       ├── pokemons
+│   │       │   └── PokemonsView.spec.ts
+│   │       ├── pokemon-search
+│   │       │   └── PokemonSearchView.spec.ts
+│   │       └── pokemons-favorite
+│   │           └── PokemonsFavoriteView.spec.ts
+│   ├── types
+│   │   ├── pokemon-list.ts
+│   │   ├── pokemon-response.ts
+│   │   └── pokemon.ts
+│   ├── views
+│   │   ├── HomeView.vue
+│   │   ├── pokemons
+│   │   │   └── PokemonsView.vue
+│   │   ├── pokemon-search
+│   │   │   └── PokemonSearchView.vue
+│   │   └── pokemons-favorite
+│   │       └── PokemonsFavoriteView.vue
+├── App.vue
+├── main.ts
 
 ```
+
+## Pruebas Unitarias
+
+El proyecto incluye pruebas unitarias para los componentes principales utilizando Vitest y Vue Test Utils.
+
+### Ejecutar las pruebas
+
+Para ejecutar todas las pruebas unitarias:
+
+```bash
+npm run test
+```
+
+Para ejecutar las pruebas en modo watch (útil durante el desarrollo):
+
+```bash
+npm run test:watch
+```
+
+### Estructura de las pruebas
+
+Las pruebas se encuentran en el directorio `src/__test__` y siguen la misma estructura que los componentes del proyecto. Cada componente principal tiene su propio archivo de prueba.

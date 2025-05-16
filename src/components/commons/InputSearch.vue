@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { usePokemonSearch } from '../../composables/usePokemonSearch'
+import { usePokemonSearch } from '../../composables/pokemons/usePokemonSearch'
 
 const { searchValue, handleSearch, clearSearch } = usePokemonSearch()
 </script>

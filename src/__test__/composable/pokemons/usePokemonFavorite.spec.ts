@@ -1,10 +1,10 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
-import { usePokemonFavorite } from '../../composables/usePokemonFavorite'
-import { usePokemonStore } from '../../store/usePokemonStore'
+import { usePokemonFavorite } from '../../../composables/pokemons/usePokemonFavorite'
+import { usePokemonStore } from '../../../store/usePokemonStore'
 import { reactive, nextTick } from 'vue'
 
 // Mock del store
-vi.mock('../../store/usePokemonStore', () => ({
+vi.mock('../../../store/usePokemonStore', () => ({
   usePokemonStore: vi.fn(() => ({
     // Propiedades básicas de Pinia
     $id: 'pokemons',

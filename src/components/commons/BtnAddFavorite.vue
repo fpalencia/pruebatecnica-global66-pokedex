@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import IconFavorite from '../icons/IconFavorite.vue';
+import IconFavorite from '../../assets/icons/IconFavorite.vue';
 import { usePokemonStore } from '../../store/usePokemonStore';
 
 type Props = {

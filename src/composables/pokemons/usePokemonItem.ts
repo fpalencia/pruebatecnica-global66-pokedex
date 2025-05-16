@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/vue-query'
-import { getPokemonById } from '../services/getPokemonsServices'
+import { getPokemonById } from '../../services/getPokemonsServices'
 import type { Ref } from 'vue'
 
 export const usePokemonItem = (name: string | Ref<string>) => {

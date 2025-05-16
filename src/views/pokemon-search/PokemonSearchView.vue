@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import IconPokeball from '../../components/icons/IconPokeball.vue'
+import IconPokeball from '../../assets/icons/IconPokeball.vue'
 import PokemonItem from '../../components/pokemon/PokemonItem.vue'
 import { useRoute, useRouter } from 'vue-router'
 import { ref, watchEffect } from 'vue'
-import { usePokemonItem } from '../../composables/usePokemonItem'
+import { usePokemonItem } from '../../composables/pokemons/usePokemonItem'
 
 const route = useRoute()
 const router = useRouter()
