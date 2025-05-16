@@ -101,15 +101,15 @@ describe('usePokemonStore', () => {
     const store = usePokemonStore()
     
     // Inicialmente no hay favoritos
-    expect(store.isFavoriteExists('pikachu')).toBeFalsy()
+    expect(store.isFavorite('pikachu')).toBeFalsy()
     
     // Agregar un favorito
     store.addFavorite('pikachu')
     
     // Verificar que existe
-    expect(store.isFavoriteExists('pikachu')).toBeTruthy()
+    expect(store.isFavorite('pikachu')).toBeTruthy()
     
     // Verificar que otro pokemon no existe como favorito
-    expect(store.isFavoriteExists('charizard')).toBeFalsy()
+    expect(store.isFavorite('charizard')).toBeFalsy()
   })
 })
