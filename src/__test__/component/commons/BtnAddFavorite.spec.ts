@@ -1,12 +1,12 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { mount } from '@vue/test-utils'
-import BtnAddFavorite from '../../components/commons/BtnAddFavorite.vue'
-import IconFavorite from '../../components/icons/IconFavorite.vue'
-import { usePokemonStore } from '../../store/usePokemonStore'
+import BtnAddFavorite from '../../../components/commons/BtnAddFavorite.vue'
+import IconFavorite from '../../../components/icons/IconFavorite.vue'
+import { usePokemonStore } from '../../../store/usePokemonStore'
 import { createPinia, setActivePinia } from 'pinia'
 
 // Mock del store
-vi.mock('../../store/usePokemonStore', () => ({
+vi.mock('../../../store/usePokemonStore', () => ({
   usePokemonStore: vi.fn()
 }))
 

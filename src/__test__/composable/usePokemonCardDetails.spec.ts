@@ -24,7 +24,15 @@ describe('usePokemonCardDetails', () => {
     vi.mocked(usePokemonItem).mockReturnValue({
       isLoading: ref(true),
       isFetching: ref(false),
-      pokemon: ref(null)
+      isError: ref(false),
+      errorMessage: ref(null),
+      pokemon: ref({
+        name: 'pikachu',
+        id: 25,
+        weight: 60,
+        height: 4,
+        types: ['electric']
+      })
     })
 
     // Configurar el mock de useClipboard
@@ -45,7 +53,15 @@ describe('usePokemonCardDetails', () => {
     vi.mocked(usePokemonItem).mockReturnValue({
       isLoading: ref(false),
       isFetching: ref(false),
-      pokemon: ref(null)
+      isError: ref(false),
+      errorMessage: ref(null),
+      pokemon: ref({
+        name: 'pikachu',
+        id: 25,
+        weight: 60,
+        height: 4,
+        types: ['electric']
+      })
     })
 
     vi.mocked(useClipboard).mockReturnValue({
@@ -76,6 +92,8 @@ describe('usePokemonCardDetails', () => {
     vi.mocked(usePokemonItem).mockReturnValue({
       isLoading: ref(false),
       isFetching: ref(false),
+      isError: ref(false),
+      errorMessage: ref(null),
       pokemon: ref(mockPokemon)
     })
 
@@ -119,6 +137,8 @@ describe('usePokemonCardDetails', () => {
     vi.mocked(usePokemonItem).mockReturnValue({
       isLoading: ref(false),
       isFetching: ref(false),
+      isError: ref(false),
+      errorMessage: ref(null),
       pokemon: ref(null)
     })
 
@@ -155,7 +175,15 @@ describe('usePokemonCardDetails', () => {
     vi.mocked(usePokemonItem).mockReturnValue({
       isLoading: ref(false),
       isFetching: ref(false),
-      pokemon: ref(null)
+      isError: ref(false),
+      errorMessage: ref(null),
+      pokemon: ref({
+        name: 'pikachu',
+        id: 25,
+        weight: 60,
+        height: 4,
+        types: ['electric']
+      })
     })
 
     const copiedRef = ref(true)
