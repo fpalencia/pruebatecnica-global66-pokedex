@@ -32,7 +32,7 @@ export const useInfinityScroll = <T>(
       
       page.value++;
     } catch (error) {
-      console.error('Error cargando elementos:', error);
+      console.error('Error loading items:', error);
     } finally {
       loading.value = false;
     }

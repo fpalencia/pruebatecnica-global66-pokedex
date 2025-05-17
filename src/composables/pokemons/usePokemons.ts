@@ -7,7 +7,7 @@ import { useInfinityScroll } from "../custom/useInfinityScroll";
 export const usePokemons = (
   pokemonListProvider = usePokemonsList, 
   storeProvider = usePokemonStore,
-  options = { maxPages: 40, scrollDistance: 10, scrollThrottle: 600 }
+  options = { maxPages: 40, limit: 10, scrollOffset: 10 }
 ) => {
   
   const store = storeProvider();
@@ -48,8 +48,8 @@ export const usePokemons = (
   }
 
   useInfinityScroll(fetchNextPage, {
-    limit: 10,
-    scrollOffset: 10,
+    limit: options.limit,
+    scrollOffset: options.scrollOffset,
     container: scrollContainerRef.value
   })
 
