@@ -3,8 +3,9 @@ import IconPikachu from '../assets/icons/IconPikachu.vue'
 import { useRouter } from 'vue-router'
 import { usePokemonStore } from '../store/usePokemonStore'
 
-const { setInitialLoad } = usePokemonStore()
 const router = useRouter()
+
+const { setInitialLoad } = usePokemonStore()
 
 const handleGetStarted = () => {
   setInitialLoad(true)
