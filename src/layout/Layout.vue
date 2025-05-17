@@ -12,7 +12,7 @@ const handleFilterChange = (filter: string) => {
 </script>
 <template>
   <div class="flex flex-col">
-    <header class="w-full sticky top-0">
+    <header class="w-full sticky top-0 bg-gray-light">
       <div class="container mx-auto px-4">
         <InputSearch />
       </div>

@@ -8,12 +8,12 @@ type Pokemon = {
   index: number
 }
 
-const { list, initialLoad, scrollContainerRef } = usePokemons()
+const { list, initialLoad } = usePokemons()
 
 </script>
 
 <template>
-  <div ref="scrollContainerRef" class="px-4 h-[calc(95vh-200px)] overflow-y-auto custom-scrollbar">
+  <div class="px-4">
     <div v-if="initialLoad" class="h-full flex flex-col items-center justify-center">
       <IconPokeball class="w-16 h-16 animate-spin" />
     </div>

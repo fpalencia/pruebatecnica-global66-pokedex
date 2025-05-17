@@ -11,10 +11,8 @@ const { name } = defineProps<Props>()
 
 const { isFavorite, addFavorite, removeFavorite } = usePokemonStore();
 
-// Usar nombre normalizado (en minúsculas) para operaciones con favoritos
 const normalizedName = computed(() => name.toLowerCase());
 
-// Verificar si el Pokémon es favorito usando el nombre normalizado
 const isPokemonFavorite = computed(() => isFavorite(normalizedName.value));
 
 const handleToggleFavorite = () => {
@@ -27,10 +25,9 @@ const handleToggleFavorite = () => {
 </script>
 
 <template>
-  <button 
+  <button
     class="w-[44px] h-[44px] rounded-full border-none cursor-pointer bg-gray-light flex items-center justify-center"
-    @click="handleToggleFavorite"
-  >
+    @click="handleToggleFavorite">
     <IconFavorite :color="isPokemonFavorite ? '#ECA539' : '#BFBFBF'" />
   </button>
 </template>
