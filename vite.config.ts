@@ -19,6 +19,8 @@ export default defineConfig({
     }
   },
   build: {
+    // Configuración para Vercel
+    outDir: 'dist',
     // Excluir archivos de test durante el build
     rollupOptions: {
       output: {
