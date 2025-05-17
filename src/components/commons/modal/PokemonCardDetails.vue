@@ -3,7 +3,8 @@ import { defineEmits, ref } from 'vue';
 import BtnAddFavorite from '../BtnAddFavorite.vue';
 import { usePokemonCardDetails } from '../../../composables/pokemons/usePokemonCardDetails';
 import IconPokeball from '../../../assets/icons/IconPokeball.vue';
-import { capitalize } from '../../../helpers';
+import Attributes from './components/Attributes.vue';
+
 type Props = {
   pokemon: string
 }
@@ -48,7 +49,8 @@ const handleImageLoad = () => {
       </div>
 
       <div class="p-5">
-        <div class="py-2 border-b border-gray-200 flex items-center">
+        <Attributes v-if="pokemon" :pokemon="pokemon" />
+<!--         <div class="py-2 border-b border-gray-200 flex items-center">
           <span class="text-gray-600 font-semibold w-20 text-gray-dark">Name:</span>
           <span class="text-gray-800">{{ pokemon?.name ? capitalize(pokemon.name) : '' }}</span>
         </div>
@@ -66,7 +68,7 @@ const handleImageLoad = () => {
         <div class="py-2 border-b border-gray-200 flex items-center">
           <span class="text-gray-600 font-semibold w-20 text-gray-dark">Types:</span>
           <span class="text-gray-800">{{pokemon?.types ? pokemon.types.map(type => capitalize(type)).join(', ') : 'No types available' }}</span>
-        </div>
+        </div> -->
       </div>
 
       <div class="pt-0 pl-5 pr-5 pb-5 flex items-center justify-between">

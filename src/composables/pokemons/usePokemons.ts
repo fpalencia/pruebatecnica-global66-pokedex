@@ -1,8 +1,8 @@
 import { ref, watchEffect } from "vue";
 import { usePokemonsList } from "../pokemons/usePokemonsList";
 import { usePokemonStore } from "../../store/usePokemonStore";
-import { useInfiniteScroll } from '@vueuse/core'
 import { useCustomVirtualList } from "../custom/useCustomVirtualList";
+import { useInfinityScroll } from "../custom/useInfinityScroll";
 
 export const usePokemons = (
   pokemonListProvider = usePokemonsList, 
@@ -34,7 +34,7 @@ export const usePokemons = (
     itemHeight: 40
   })
 
-  const fetchNextPage = async () => {
+  const fetchNextPage = async (_page?: number, _limit?: number) => {
     if (pokemonsList.value.length === 0 && page.value === 0) return Promise.resolve()
     if (page.value > options.maxPages) return Promise.resolve()
 
@@ -47,11 +47,10 @@ export const usePokemons = (
     })
   }
 
-  useInfiniteScroll(scrollContainerRef, () => {
-    fetchNextPage()
-  }, {
-    distance: options.scrollDistance,
-    throttle: options.scrollThrottle
+  useInfinityScroll(fetchNextPage, {
+    limit: 10,
+    scrollOffset: 10,
+    container: scrollContainerRef.value
   })
 
   return {
