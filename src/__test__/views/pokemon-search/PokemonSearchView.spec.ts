@@ -112,7 +112,7 @@ describe('PokemonSearchView', () => {
     await wrapper.find('button').trigger('click');
     
     // Verificar que se llamó al router con los parámetros correctos
-    expect(mockRouter.push).toHaveBeenCalledWith({ name: 'pokemons' });
+    expect(mockRouter.push).toHaveBeenCalledWith({ name: 'home' });
   });
 
   it('actualiza searchValue cuando cambia el query parameter', async () => {
