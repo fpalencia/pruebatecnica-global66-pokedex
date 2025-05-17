@@ -51,6 +51,7 @@ Este proyecto es una aplicación web tipo Pokedex desarrollada como prueba técn
 ├── src
 │   ├── api
 │   │   └── pokemonApi.ts
+│   ├── App.vue
 │   ├── assets
 │   │   ├── icons
 │   │   │   ├── IconAll.vue
@@ -68,13 +69,16 @@ Este proyecto es una aplicación web tipo Pokedex desarrollada como prueba técn
 │   │   │   ├── InputSearch.vue
 │   │   │   ├── Loading.vue
 │   │   │   └── modal
+│   │   │       ├── components
+│   │   │       │   └── Attributes.vue
 │   │   │       └── PokemonCardDetails.vue
 │   │   └── pokemon
 │   │       ├── PokemonItem.vue
 │   │       └── PokemonList.vue
 │   ├── composables
 │   │   ├── custom
-│   │   │   └── useCustomVirtualList.ts
+│   │   │   ├── useCustomVirtualList.ts
+│   │   │   └── useInfinityScroll.ts
 │   │   └── pokemons
 │   │       ├── usePokemonCardDetails.ts
 │   │       ├── usePokemonFavorite.ts
@@ -86,6 +90,7 @@ Este proyecto es una aplicación web tipo Pokedex desarrollada como prueba técn
 │   │   └── index.ts
 │   ├── layout
 │   │   └── Layout.vue
+│   ├── main.ts
 │   ├── router
 │   │   └── index.ts
 │   ├── schema
@@ -105,6 +110,8 @@ Este proyecto es una aplicación web tipo Pokedex desarrollada como prueba técn
 │   │   │   │   ├── InputSearch.spec.ts
 │   │   │   │   ├── Loading.spec.ts
 │   │   │   │   └── modal
+│   │   │   │       ├── components
+│   │   │   │       │   └── Attributes.spec.ts
 │   │   │   │       └── PokemonCardDetails.spec.ts
 │   │   │   └── pokemon
 │   │   │       ├── PokemonItem.spec.ts
@@ -124,7 +131,7 @@ Este proyecto es una aplicación web tipo Pokedex desarrollada como prueba técn
 │   │   ├── store
 │   │   │   └── usePokemonStore.spec.ts
 │   │   └── views
-            ├── HomeView.spec.ts
+│   │       ├── HomeView.spec.ts
 │   │       ├── pokemons
 │   │       │   └── PokemonsView.spec.ts
 │   │       ├── pokemon-search
@@ -143,8 +150,6 @@ Este proyecto es una aplicación web tipo Pokedex desarrollada como prueba técn
 │   │   │   └── PokemonSearchView.vue
 │   │   └── pokemons-favorite
 │   │       └── PokemonsFavoriteView.vue
-├── App.vue
-├── main.ts
 
 ```
 
