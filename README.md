@@ -70,7 +70,9 @@ Este proyecto es una aplicación web tipo Pokedex desarrollada como prueba técn
 │   │   │   ├── Loading.vue
 │   │   │   └── modal
 │   │   │       ├── components
-│   │   │       │   └── Attributes.vue
+│   │   │       │   ├── Attributes.vue
+│   │   │       │   ├── SkeletonAttributes.vue
+│   │   │       │   └── SkeletonButtons.vue
 │   │   │       └── PokemonCardDetails.vue
 │   │   └── pokemon
 │   │       ├── PokemonItem.vue
@@ -111,7 +113,9 @@ Este proyecto es una aplicación web tipo Pokedex desarrollada como prueba técn
 │   │   │   │   ├── Loading.spec.ts
 │   │   │   │   └── modal
 │   │   │   │       ├── components
-│   │   │   │       │   └── Attributes.spec.ts
+│   │   │   │       │   ├── Attributes.spec.ts
+│   │   │   │       │   ├── SkeletonAttributes.spec.ts
+│   │   │   │       │   └── SkeletonButtons.spec.ts
 │   │   │   │       └── PokemonCardDetails.spec.ts
 │   │   │   └── pokemon
 │   │   │       ├── PokemonItem.spec.ts
