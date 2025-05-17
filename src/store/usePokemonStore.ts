@@ -18,7 +18,6 @@ export const usePokemonStore = defineStore('pokemons', () => {
   }
 
   const addFavorite = (pokemonName: string) => {
-    if (isFavorite(pokemonName)) return;
     favorites.value = { ...favorites.value, [pokemonName]: pokemonName }
   }
 
